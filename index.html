@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ALCIVIA Mini MBA | Margin: The Money You Actually Keep</title>
+<style>
+:root{
+  --green:#2f6d3d; --green2:#4c8b52; --deep:#163f24; --lime:#aec95b;
+  --cream:#f6f3e9; --paper:#fffdf8; --ink:#1f2a22; --muted:#667269;
+  --line:#d9e1d8; --gold:#d0a64b; --red:#a65345; --soft:#e9f3e7;
+  --shadow:0 18px 45px rgba(31,60,37,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#eef1eb;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,input{font:inherit}
+button{cursor:pointer}
+button:focus-visible,input:focus-visible{outline:3px solid rgba(174,201,91,.7);outline-offset:3px}
+.shell{max-width:1180px;margin:0 auto;background:var(--cream);min-height:100vh;box-shadow:var(--shadow)}
+.topbar{position:sticky;top:0;z-index:20;display:flex;gap:18px;align-items:center;padding:12px 22px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.brand{display:flex;align-items:center;gap:10px;min-width:210px;font-weight:850;letter-spacing:.06em;color:var(--deep)}
+.mark{width:32px;height:32px;border-radius:9px;background:var(--green);color:white;display:grid;place-items:center;font-weight:900;transform:rotate(45deg)}
+.mark span{transform:rotate(-45deg)}
+.progresswrap{flex:1}.plabel{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:5px}.pbar{height:8px;border-radius:999px;background:#e7ebe5;overflow:hidden}.pbar>div{height:100%;width:7%;background:linear-gradient(90deg,var(--green),var(--lime));transition:width .35s ease}
+.hero{padding:70px 64px 62px;color:white;background:radial-gradient(circle at 88% 18%,rgba(174,201,91,.23),transparent 25%),linear-gradient(135deg,var(--deep),var(--green) 65%,#477f49);position:relative;overflow:hidden}
+.hero:after{content:"%";position:absolute;right:30px;bottom:-78px;font-size:260px;font-weight:900;color:rgba(255,255,255,.055);line-height:1}
+.eyebrow{display:inline-flex;padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.1);font-size:12px;letter-spacing:.11em;text-transform:uppercase}
+.hero h1{font-size:clamp(42px,7vw,76px);letter-spacing:-.055em;line-height:.95;max-width:840px;margin:20px 0 18px}.hero p{font-size:20px;line-height:1.55;max-width:760px;color:rgba(255,255,255,.88)}
+.heroactions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.btn{min-height:46px;border:0;border-radius:12px;padding:13px 18px;font-weight:800;transition:.15s}.btn:hover{transform:translateY(-1px)}.primary{background:var(--lime);color:#17341c}.light{background:white;color:var(--deep)}.ghost{background:transparent;border:1px solid var(--line);color:var(--deep)}
+.hero small{display:block;margin-top:18px;color:rgba(255,255,255,.66)}
+.section{display:grid;grid-template-columns:230px 1fr;gap:32px;padding:54px 64px;border-bottom:1px solid var(--line)}
+.sidebar{position:sticky;top:82px;align-self:start}.kicker{font-size:12px;font-weight:850;text-transform:uppercase;letter-spacing:.13em;color:var(--green)}.sidebar h2{font-size:27px;line-height:1.05;margin:8px 0 10px}.sidebar p{font-size:14px;color:var(--muted);line-height:1.55}.content h3{font-size:34px;letter-spacing:-.04em;line-height:1.05;margin:0 0 12px}.lede{font-size:18px;line-height:1.6;color:#4e5b51;max-width:800px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:24px;margin-top:22px;box-shadow:0 8px 28px rgba(31,60,37,.05)}
+.livegrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}.metric{background:white;border:1px solid var(--line);border-radius:16px;padding:16px}.metric span{font-size:12px;color:var(--muted)}.metric strong{display:block;font-size:26px;margin-top:4px;letter-spacing:-.03em}.metric.hot strong{color:var(--green)}
+.saleviz{margin-top:20px}.sale100{height:70px;border-radius:16px;overflow:hidden;display:flex;border:1px solid var(--line);background:white}.costbar,.marginbar{display:flex;align-items:center;justify-content:center;font-weight:850;transition:width .28s ease;min-width:0}.costbar{background:#dfe5df;color:#445047}.marginbar{background:linear-gradient(90deg,var(--green),var(--green2));color:white}.splitlabels{display:flex;justify-content:space-between;gap:12px;margin-top:10px;font-size:14px;color:var(--muted)}
+.rangeblock{margin-top:26px}.rangehead{display:flex;justify-content:space-between;gap:12px;align-items:end}.rangehead label{font-weight:800}.rangevalue{font-size:20px;font-weight:850;color:var(--deep);transition:transform .16s ease,color .16s ease}.rangevalue.pulse{transform:scale(1.06);color:var(--green)}
+.range-track-wrap{position:relative;padding:34px 0 20px;margin-top:4px}.premium-range{--fill:50%;appearance:none;-webkit-appearance:none;width:100%;height:8px;border-radius:999px;margin:0;background:linear-gradient(90deg,var(--green) 0 var(--fill),#dfe6dd var(--fill) 100%);outline:none;display:block}.premium-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:24px;height:24px;border-radius:50%;background:#fff;border:4px solid var(--green);box-shadow:0 5px 14px rgba(22,63,36,.22);transition:transform .14s ease,box-shadow .14s ease}.premium-range::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#fff;border:4px solid var(--green);box-shadow:0 5px 14px rgba(22,63,36,.22);transition:transform .14s ease,box-shadow .14s ease}.premium-range:active::-webkit-slider-thumb{transform:scale(1.14);box-shadow:0 7px 18px rgba(22,63,36,.28)}.premium-range:active::-moz-range-thumb{transform:scale(1.14)}
+.rangebubble{position:absolute;top:0;left:var(--bubble-left,50%);transform:translateX(-50%);padding:6px 9px;border-radius:9px;background:var(--deep);color:#fff;font-size:12px;font-weight:850;white-space:nowrap;box-shadow:0 5px 12px rgba(22,63,36,.16);pointer-events:none;transition:left .08s linear}.rangebubble:after{content:"";position:absolute;left:50%;bottom:-5px;transform:translateX(-50%);border-left:5px solid transparent;border-right:5px solid transparent;border-top:5px solid var(--deep)}
+.rangemeta{display:flex;justify-content:space-between;gap:12px;margin-top:8px;font-size:11px;color:var(--muted)}.rangemark{position:absolute;top:30px;left:var(--mark-left,50%);width:2px;height:18px;background:var(--gold);border-radius:2px;transform:translateX(-1px);pointer-events:none}.rangemark:after{content:"start";position:absolute;top:18px;left:50%;transform:translateX(-50%);font-size:9px;font-weight:800;color:#8a6b29;white-space:nowrap;text-transform:uppercase;letter-spacing:.06em}.rangemark.at-start:after{left:0;transform:none;top:22px}.rangemark.at-end:after{left:auto;right:0;transform:none;top:22px}
+.healthmeter{margin-top:12px;padding:14px;border:1px solid var(--line);border-radius:16px;background:#fbfcf8}.healthtop{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:9px}.healthtop span{font-size:12px;color:var(--muted)}.healthtop strong{font-size:16px;color:var(--deep)}.healthtrack{height:12px;border-radius:999px;background:#e5e9e4;overflow:hidden}.healthfill{height:100%;width:20%;border-radius:999px;background:linear-gradient(90deg,var(--gold),var(--lime),var(--green));transition:width .28s ease}.healthticks{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-top:6px}
+.formula{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:20px;border-radius:16px;background:var(--soft);margin-top:20px;font-weight:800}.formula .big{font-size:28px;color:var(--deep)}
+.lab{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px;margin-top:20px}.controls{background:white;border:1px solid var(--line);border-radius:18px;padding:20px}.chart{background:white;border:1px solid var(--line);border-radius:18px;padding:18px}.stack{height:190px;display:flex;align-items:end;justify-content:center;gap:18px;padding:12px 0 2px}.barcol{width:96px;text-align:center}.bar{height:150px;border-radius:14px 14px 5px 5px;background:#e5e9e4;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}.barfill{height:50%;transition:height .3s ease}.revfill{background:#aeb9ae}.gpfill{background:linear-gradient(180deg,var(--lime),var(--green))}.barcol strong{display:block;margin-top:9px}.barcol span{font-size:12px;color:var(--muted)}
+.trapbox{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}.beforeafter{border:1px solid var(--line);background:white;border-radius:18px;padding:20px}.beforeafter h4{margin:0 0 15px}.moneyline{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px solid #edf0ec}.moneyline:last-child{border-bottom:0}.moneyline.emph{font-size:20px;font-weight:850;color:var(--deep)}
+.alert{padding:18px;border-radius:16px;background:#fff3df;border:1px solid #ead4a4;margin-top:18px}.alert strong{color:#714f0f}
+.recovery{display:grid;grid-template-columns:1fr .72fr;gap:18px;align-items:center}.dial{width:176px;height:176px;margin:6px auto;border-radius:50%;background:conic-gradient(var(--green) 0deg,var(--green) 180deg,#e4e9e3 180deg);display:grid;place-items:center;transition:background .25s}.dialinner{width:132px;height:132px;border-radius:50%;background:var(--paper);display:grid;place-items:center;text-align:center;padding:18px}.dialinner strong{font-size:30px;color:var(--deep)}
+.scenarios{display:grid;gap:15px;margin-top:20px}.scenario{background:white;border:1px solid var(--line);border-radius:18px;padding:20px}.scenariohead{display:flex;justify-content:space-between;gap:16px;align-items:start}.scenario h4{font-size:20px;margin:0 0 6px}.tag{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--green);font-weight:850}.choices{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.choice{border:1px solid var(--line);border-radius:13px;padding:14px;background:#fbfcfa;text-align:left;color:var(--ink);min-height:92px}.choice:hover{border-color:#9cb69d}.choice.selected{border-color:var(--green);background:var(--soft)}.impact{display:none;margin-top:15px;padding:15px;border-radius:13px;background:#f4f7f3;border:1px solid var(--line)}.impact.show{display:block}.impactgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}.impactgrid div{background:white;border:1px solid var(--line);border-radius:10px;padding:10px}.impactgrid span{font-size:11px;color:var(--muted)}.impactgrid strong{display:block;margin-top:3px}
+.principle{background:linear-gradient(135deg,#eef5e9,#f8f5e8);border:1px solid #d7e2d0;border-radius:22px;padding:30px;margin-top:22px}.principle blockquote{font-size:26px;line-height:1.35;margin:0;color:var(--deep);font-weight:780;letter-spacing:-.025em}.principle p{margin:14px 0 0;color:var(--muted);line-height:1.6}
+.end{padding:68px 64px;text-align:center;background:linear-gradient(145deg,#f5f1e4,#edf4e9)}.end h2{font-size:44px;letter-spacing:-.045em;margin:10px 0 12px}.end .lede{margin:0 auto}.takeaway{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:860px;margin:28px auto}.takeaway div{padding:18px;background:white;border:1px solid var(--line);border-radius:16px}.takeaway strong{display:block;color:var(--green);font-size:23px}.small{font-size:12px;color:var(--muted);line-height:1.55;max-width:720px;margin:24px auto 0}
+.toast{position:fixed;right:20px;bottom:20px;background:var(--deep);color:white;padding:12px 15px;border-radius:11px;display:none;z-index:50;box-shadow:var(--shadow)}.toast.show{display:block}
+@media(max-width:1050px){
+  .topbar{padding:10px 14px}
+  .brand{min-width:auto}
+  .brandtext{display:none}
+  .hero{padding:50px 28px}
+  .section{display:block;padding:34px 28px}
+  .sidebar{position:static;margin-bottom:22px}
+  .lab,.trapbox{grid-template-columns:1fr}
+  .recovery{grid-template-columns:minmax(0,1.35fr) minmax(160px,.65fr);gap:16px}
+  .livegrid{grid-template-columns:1fr 1fr}
+  .choices{grid-template-columns:1fr}
+  .impactgrid{grid-template-columns:1fr 1fr}
+  .controls,.chart,.beforeafter,.card,.content{min-width:0;width:100%}
+  .chart{padding:16px}
+  .stack{height:176px;padding-top:8px}
+  .bar{height:140px}
+  .healthmeter{margin-top:10px}
+  .end{padding:46px 28px}
+}
+@media(max-width:600px){
+  .hero{padding:42px 20px}
+  .hero h1{font-size:42px}
+  .section{padding:36px 20px}
+  .livegrid,.takeaway{grid-template-columns:1fr}
+  .splitlabels{flex-direction:column}
+  .impactgrid{grid-template-columns:1fr}
+  .stack{gap:10px}
+  .barcol{width:88px}
+  .recovery{grid-template-columns:1fr;gap:18px}
+  .dial{width:164px;height:164px}
+  .dialinner{width:122px;height:122px}
+}
+</style>
+</head>
+<body>
+<div class="shell" id="app">
+  <div class="topbar">
+    <div class="brand"><div class="mark"><span>A</span></div><span class="brandtext">ALCIVIA MINI MBA</span></div>
+    <div class="progresswrap"><div class="plabel"><span>Margin: The Money You Actually Keep</span><span id="progressText">7%</span></div><div class="pbar"><div id="progressBar"></div></div></div>
+  </div>
+
+  <section class="hero">
+    <div class="eyebrow">Financial Responsibility • Introductory Module</div>
+    <h1>Margin is where the business begins to breathe.</h1>
+    <p>A sale can look great on the top line and still create very little value. In this lab, you'll change price, cost, volume and discounts yourself—and watch margin react in real time.</p>
+    <div class="heroactions"><button class="btn primary" data-scroll="#discover">Enter the Margin Lab →</button><button class="btn light" data-scroll="#principle">Why margin matters</button></div>
+    <small>All figures and scenarios are fictional training examples.</small>
+  </section>
+
+  <section class="section" id="discover">
+    <aside class="sidebar"><div class="kicker">01 • Discover it</div><h2>Split the $100 sale</h2><p>Before formulas, see where the money actually goes.</p></aside>
+    <div class="content">
+      <h3>A customer spends $100. What do you actually keep?</h3>
+      <p class="lede">Move the cost slider. The sale stays the same, but the money left to run the business changes instantly.</p>
+      <div class="card">
+        <div class="saleviz"><div class="sale100"><div class="costbar" id="costBar">Cost $80</div><div class="marginbar" id="marginBar">$20 left</div></div></div>
+        <div class="rangeblock"><div class="rangehead"><label for="costSlider">Product / direct cost</label><div class="rangevalue" id="costValue">$80</div></div><input id="costSlider" type="range" min="40" max="98" value="80" step="1"></div>
+        <div class="livegrid"><div class="metric"><span>Revenue</span><strong>$100</strong></div><div class="metric"><span>Direct cost</span><strong id="splitCost">$80</strong></div><div class="metric hot"><span>Gross profit</span><strong id="splitGP">$20</strong></div><div class="metric hot"><span>Gross margin</span><strong id="splitMargin">20%</strong></div></div>
+        <div class="formula"><span class="big">Gross Margin %</span><span>=</span><span>(Revenue − COGS)</span><span>÷</span><span>Revenue</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="lab">
+    <aside class="sidebar"><div class="kicker">02 • Manipulate it</div><h2>The Margin Lab</h2><p>Price, cost and volume tell different stories.</p></aside>
+    <div class="content">
+      <h3>Run the numbers yourself.</h3>
+      <p class="lede">Change the inputs. Notice that volume can grow revenue without improving margin percentage, while price and cost directly reshape margin.</p>
+      <div class="lab">
+        <div class="controls">
+          <div class="rangeblock"><div class="rangehead"><label for="priceSlider">Selling price</label><div class="rangevalue" id="priceValue">$100</div></div><input id="priceSlider" type="range" min="70" max="140" value="100" step="1"></div>
+          <div class="rangeblock"><div class="rangehead"><label for="labCostSlider">Unit cost</label><div class="rangevalue" id="labCostValue">$80</div></div><input id="labCostSlider" type="range" min="40" max="110" value="80" step="1"></div>
+          <div class="rangeblock"><div class="rangehead"><label for="volumeSlider">Units sold</label><div class="rangevalue" id="volumeValue">1,000</div></div><input id="volumeSlider" type="range" min="250" max="2500" value="1000" step="50"></div>
+          <button class="btn ghost" id="resetLab" style="margin-top:18px">Reset lab</button>
+        </div>
+        <div class="chart">
+          <div class="livegrid" style="grid-template-columns:1fr 1fr"><div class="metric"><span>Revenue</span><strong id="labRevenue">$100,000</strong></div><div class="metric hot"><span>Gross profit</span><strong id="labGP">$20,000</strong></div><div class="metric"><span>Gross margin</span><strong id="labMargin">20.0%</strong></div><div class="metric"><span>GP per unit</span><strong id="labGPU">$20</strong></div></div>
+          <div class="stack"><div class="barcol"><div class="bar"><div class="barfill revfill" id="revBar"></div></div><strong id="revBarLabel">$100K</strong><span>Revenue</span></div><div class="barcol"><div class="bar"><div class="barfill gpfill" id="gpBar"></div></div><strong id="gpBarLabel">$20K</strong><span>Gross profit</span></div></div>
+          <div class="healthmeter" aria-live="polite"><div class="healthtop"><span>Margin health</span><strong id="marginHealthLabel">20.0% margin</strong></div><div class="healthtrack"><div class="healthfill" id="marginHealthFill"></div></div><div class="healthticks"><span>compressed</span><span>healthy</span><span>strong</span></div></div>
+          <p class="small" style="margin:12px 0 0;text-align:center">Margin percentage is about the relationship between selling price and cost. Volume determines how many margin dollars you create.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="discount">
+    <aside class="sidebar"><div class="kicker">03 • Feel it</div><h2>The Discount Trap</h2><p>A small price concession can create a much bigger profit concession.</p></aside>
+    <div class="content">
+      <h3>Give the customer a discount. Watch what happens.</h3>
+      <p class="lede">Start with a $100 selling price and $80 cost. Slide the discount from 0% to 15% and watch gross profit collapse faster than price.</p>
+      <div class="card">
+        <div class="rangeblock"><div class="rangehead"><label for="discountSlider">Discount</label><div class="rangevalue" id="discountValue">5%</div></div><input id="discountSlider" type="range" min="0" max="15" value="5" step="1"></div>
+        <div class="trapbox">
+          <div class="beforeafter"><h4>Before discount</h4><div class="moneyline"><span>Selling price</span><strong>$100</strong></div><div class="moneyline"><span>Cost</span><strong>$80</strong></div><div class="moneyline emph"><span>Gross profit</span><strong>$20</strong></div><div class="moneyline"><span>Margin</span><strong>20.0%</strong></div></div>
+          <div class="beforeafter"><h4>After discount</h4><div class="moneyline"><span>Selling price</span><strong id="discPrice">$95</strong></div><div class="moneyline"><span>Cost</span><strong>$80</strong></div><div class="moneyline emph"><span>Gross profit</span><strong id="discGP">$15</strong></div><div class="moneyline"><span>Margin</span><strong id="discMargin">15.8%</strong></div></div>
+        </div>
+        <div class="alert"><strong id="discountHeadline">Price fell 5%. Gross profit fell 25%.</strong><div id="discountCopy" style="margin-top:5px">To earn the original gross profit at this new price, you'd need about 33% more volume.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="recover">
+    <aside class="sidebar"><div class="kicker">04 • Recover it</div><h2>Earn it back</h2><p>Discounts don't end at the point of sale. Someone has to replace the lost gross profit.</p></aside>
+    <div class="content">
+      <h3>How much extra volume does it take?</h3>
+      <p class="lede">A 5% discount took gross profit per unit from $20 to $15. Increase volume until you recover the original $20,000 of gross profit.</p>
+      <div class="card recovery">
+        <div>
+          <div class="rangeblock"><div class="rangehead"><label for="recoverySlider">New monthly volume</label><div class="rangevalue" id="recoveryVolume">1,000</div></div><input id="recoverySlider" type="range" min="1000" max="1800" value="1000" step="10"></div>
+          <div class="livegrid" style="grid-template-columns:1fr 1fr"><div class="metric"><span>Gross profit now</span><strong id="recoveryGP">$15,000</strong></div><div class="metric"><span>Target</span><strong>$20,000</strong></div></div>
+          <div id="recoveryMessage" class="alert"><strong>You're still $5,000 short.</strong></div>
+        </div>
+        <div class="dial" id="dial"><div class="dialinner"><div><span style="font-size:12px;color:var(--muted)">Profit recovered</span><strong id="recoveryPct">75%</strong><span style="font-size:12px;color:var(--muted)">of original GP</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="tradeoffs">
+    <aside class="sidebar"><div class="kicker">05 • Protect it</div><h2>What would you trade?</h2><p>Margin is not sacred. But giving it up should buy something valuable.</p></aside>
+    <div class="content">
+      <h3>Protect margin deliberately—not blindly.</h3>
+      <p class="lede">Choose how you'd respond. There isn't always one perfect answer. The point is to understand what you're giving up, and what you're getting in return.</p>
+      <div class="scenarios" id="scenarios"></div>
+    </div>
+  </section>
+
+  <section class="section" id="principle">
+    <aside class="sidebar"><div class="kicker">06 • Remember it</div><h2>The principle</h2><p>Margin funds everything that comes after the sale.</p></aside>
+    <div class="content">
+      <h3>Why protect margin?</h3>
+      <div class="principle"><blockquote>Protect margin deliberately. Give it up only when you understand what you're getting in return.</blockquote><p>Margin helps pay for people, trucks, facilities, service, technology, safety, reinvestment and future growth. When margin disappears accidentally, the business has fewer choices. Strategic tradeoffs can make sense—but they should be conscious tradeoffs.</p></div>
+      <div class="takeaway"><div><strong>Price</strong><span>creates or gives away margin</span></div><div><strong>Cost</strong><span>compresses or expands margin</span></div><div><strong>Volume</strong><span>multiplies margin dollars</span></div></div>
+    </div>
+  </section>
+
+  <section class="end">
+    <div class="kicker">Intro complete</div>
+    <h2>Now you're ready for the Margin Game.</h2>
+    <p class="lede">You know the formula. More importantly, you've seen why a few points of margin can change the economics of an entire decision.</p>
+    <div class="heroactions" style="justify-content:center"><button class="btn primary" id="replay">Replay the lab</button></div>
+    <p class="small">Concept demo for an ALCIVIA-themed learning experience. All financial figures, scenarios and calculations are fictional training examples and are not ALCIVIA financial results.</p>
+  </section>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(()=>{
+  const $=id=>document.getElementById(id);
+  const money=n=>'$'+Math.round(n).toLocaleString('en-US');
+  const pct=n=>(Math.round(n*10)/10).toFixed(1)+'%';
+  const progressSteps=new Set();
+  function progress(key){ if(progressSteps.has(key)) return; progressSteps.add(key); const v=Math.min(100,7+(progressSteps.size/7)*93); $('progressBar').style.width=v+'%'; $('progressText').textContent=Math.round(v)+'%'; }
+  function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window.__t);window.__t=setTimeout(()=>t.classList.remove('show'),1600)}
+  document.querySelectorAll('[data-scroll]').forEach(b=>b.addEventListener('click',()=>document.querySelector(b.dataset.scroll)?.scrollIntoView({behavior:'smooth'})));
+
+  function calc(price,cost,volume){const revenue=price*volume,cogs=cost*volume,gp=revenue-cogs;return{revenue,cogs,gp,margin:revenue?gp/revenue*100:0,gpu:price-cost}}
+
+  const rangeFormatters={costSlider:v=>money(v),priceSlider:v=>money(v),labCostSlider:v=>money(v),volumeSlider:v=>(+v).toLocaleString()+' units',discountSlider:v=>v+'%',recoverySlider:v=>(+v).toLocaleString()+' units'};
+  function updateRangeVisual(input){
+    const min=+input.min,max=+input.max,val=+input.value,p=(val-min)/(max-min)*100;
+    input.style.setProperty('--fill',p+'%');
+    const wrap=input.closest('.range-track-wrap'); if(!wrap)return;
+    wrap.style.setProperty('--bubble-left',p+'%');
+    const bubble=wrap.querySelector('.rangebubble'); if(bubble) bubble.textContent=(rangeFormatters[input.id]||String)(val);
+  }
+  function decorateRanges(){
+    document.querySelectorAll('input[type=range]').forEach(input=>{
+      if(input.closest('.range-track-wrap')) return;
+      input.classList.add('premium-range');
+      const start=+input.getAttribute('value'),min=+input.min,max=+input.max,startPct=(start-min)/(max-min)*100;
+      const wrap=document.createElement('div');wrap.className='range-track-wrap';
+      input.parentNode.insertBefore(wrap,input);wrap.appendChild(input);
+      const bubble=document.createElement('div');bubble.className='rangebubble';wrap.appendChild(bubble);
+      const marker=document.createElement('div');marker.className='rangemark'+(startPct<=2?' at-start':startPct>=98?' at-end':'');marker.style.setProperty('--mark-left',startPct+'%');wrap.appendChild(marker);
+      const meta=document.createElement('div');meta.className='rangemeta';
+      const fmt=rangeFormatters[input.id]||String;meta.innerHTML='<span>'+fmt(min)+'</span><span>'+fmt(max)+'</span>';wrap.appendChild(meta);
+      input.addEventListener('input',()=>{updateRangeVisual(input);const rv=input.closest('.rangeblock')?.querySelector('.rangevalue');if(rv){rv.classList.add('pulse');clearTimeout(rv.__pulse);rv.__pulse=setTimeout(()=>rv.classList.remove('pulse'),140)}});
+      updateRangeVisual(input);
+    });
+  }
+  decorateRanges();
+
+  function updateSplit(){updateRangeVisual($('costSlider'));const cost=+$('costSlider').value,gp=100-cost;$('costValue').textContent=money(cost);$('splitCost').textContent=money(cost);$('splitGP').textContent=money(gp);$('splitMargin').textContent=gp+'%';$('costBar').style.width=cost+'%';$('marginBar').style.width=gp+'%';$('costBar').textContent=cost>55?'Cost '+money(cost):'';$('marginBar').textContent=gp>9?money(gp)+' left':'';progress('split')}
+  $('costSlider').addEventListener('input',updateSplit);updateSplit();
+
+  function updateLab(){['priceSlider','labCostSlider','volumeSlider'].forEach(id=>updateRangeVisual($(id)));const price=+$('priceSlider').value,cost=+$('labCostSlider').value,volume=+$('volumeSlider').value;const r=calc(price,cost,volume);$('priceValue').textContent=money(price);$('labCostValue').textContent=money(cost);$('volumeValue').textContent=volume.toLocaleString();$('labRevenue').textContent=money(r.revenue);$('labGP').textContent=money(r.gp);$('labMargin').textContent=pct(r.margin);$('labGPU').textContent=money(r.gpu);const max=Math.max(r.revenue,1);$('revBar').style.height=Math.max(10,Math.min(100,r.revenue/max*100))+'%';$('gpBar').style.height=Math.max(4,Math.min(100,Math.abs(r.gp)/max*100))+'%';$('revBarLabel').textContent='$'+Math.round(r.revenue/1000)+'K';$('gpBarLabel').textContent=(r.gp<0?'-':'')+'$'+Math.abs(Math.round(r.gp/1000))+'K';$('labGP').style.color=r.gp<0?'var(--red)':'var(--green)';const health=Math.max(0,Math.min(100,r.margin*2.5));$('marginHealthFill').style.width=health+'%';$('marginHealthLabel').textContent=pct(r.margin)+' margin';progress('lab')}
+  ['priceSlider','labCostSlider','volumeSlider'].forEach(id=>$(id).addEventListener('input',updateLab));$('resetLab').addEventListener('click',()=>{$('priceSlider').value=100;$('labCostSlider').value=80;$('volumeSlider').value=1000;updateLab();toast('Lab reset')});updateLab();
+
+  function updateDiscount(){updateRangeVisual($('discountSlider'));const d=+$('discountSlider').value,newPrice=100*(1-d/100),gp=newPrice-80,margin=gp/newPrice*100,drop=(20-gp)/20*100;const extra=gp<=0?Infinity:(20/gp-1)*100;$('discountValue').textContent=d+'%';$('discPrice').textContent=money(newPrice);$('discGP').textContent=money(gp);$('discMargin').textContent=pct(margin);$('discountHeadline').textContent='Price fell '+d+'%. Gross profit fell '+Math.round(drop)+'%.';$('discountCopy').textContent=!Number.isFinite(extra)?'At this price there is no positive unit gross profit to recover with volume.':'To earn the original gross profit at this new price, you would need about '+Math.max(0,Math.round(extra))+'% more volume.';progress('discount')}
+  $('discountSlider').addEventListener('input',updateDiscount);updateDiscount();
+
+  function updateRecovery(){updateRangeVisual($('recoverySlider'));const vol=+$('recoverySlider').value,gp=vol*15,ratio=gp/20000,deg=Math.min(360,ratio*360);$('recoveryVolume').textContent=vol.toLocaleString();$('recoveryGP').textContent=money(gp);$('recoveryPct').textContent=Math.round(ratio*100)+'%';$('dial').style.background='conic-gradient(var(--green) 0deg,var(--green) '+deg+'deg,#e4e9e3 '+deg+'deg)';const diff=20000-gp;if(diff>0){$('recoveryMessage').innerHTML='<strong>You\'re still '+money(diff)+' short.</strong> Keep increasing volume.'}else{$('recoveryMessage').innerHTML='<strong>You recovered the original gross profit.</strong> It took '+Math.round((vol/1000-1)*100)+'% more units to get there.';progress('recover')}}
+  $('recoverySlider').addEventListener('input',updateRecovery);updateRecovery();
+
+  const scenarios=[
+    {tag:'Competitive pressure',title:'A competitor cuts price by 7%.',text:'A long-term customer asks you to match it.',choices:[
+      {label:'Match the full 7%',sub:'Protect the relationship immediately',impact:{price:'−7%',volume:'+0%',margin:'↓ sharply',value:'Fast retention, expensive concession'},note:'You protect the account today, but the concession permanently resets the economics unless something else changes.'},
+      {label:'Offer 3% + volume commitment',sub:'Trade margin for something measurable',impact:{price:'−3%',volume:'+15%',margin:'↓ modestly',value:'Shared tradeoff'},note:'You give some margin, but require additional volume in return. This is a deliberate exchange rather than an automatic discount.'},
+      {label:'Hold price; add service value',sub:'Protect price and differentiate',impact:{price:'0%',volume:'At risk',margin:'Protected',value:'Value strategy'},note:'Margin is protected, but customer retention now depends on whether the additional value is meaningful enough.'}
+    ]},
+    {tag:'Service recovery',title:'A preventable error disrupted a customer.',text:'Fixing it quickly will cost money this month.',choices:[
+      {label:'Do the minimum',sub:'Protect current-month cost',impact:{price:'0%',volume:'At risk',margin:'Protected now',value:'Relationship risk'},note:'You avoid an immediate expense, but the customer relationship and future revenue may be exposed.'},
+      {label:'Absorb expedited service',sub:'Spend now to restore trust',impact:{price:'0%',volume:'Protected',margin:'↓ this month',value:'Retention investment'},note:'Current margin takes a hit, but the decision may preserve future revenue. Margin can be spent strategically.'},
+      {label:'Credit future business',sub:'Share the recovery over time',impact:{price:'Future −',volume:'Protected',margin:'↓ later',value:'Balanced recovery'},note:'You preserve the relationship while spreading the financial effect into future transactions.'}
+    ]},
+    {tag:'Cost pressure',title:'Your unit cost rises 6%.',text:'The market has not moved price yet.',choices:[
+      {label:'Absorb all of it',sub:'Keep customer price unchanged',impact:{price:'0%',volume:'Protected',margin:'↓ immediately',value:'Short-term stability'},note:'Revenue may stay stable, but every unit now produces fewer gross-profit dollars.'},
+      {label:'Pass through all of it',sub:'Protect unit economics',impact:{price:'↑',volume:'At risk',margin:'Protected',value:'Margin defense'},note:'Margin is protected, but price sensitivity could affect volume. Protecting margin still involves commercial judgment.'},
+      {label:'Share the increase',sub:'Partial price move + cost work',impact:{price:'↑ modestly',volume:'More stable',margin:'Partly protected',value:'Balanced response'},note:'You protect part of the margin while looking internally for cost relief. This is a common strategic compromise.'}
+    ]}
+  ];
+  const root=$('scenarios');scenarios.forEach((s,si)=>{const el=document.createElement('div');el.className='scenario';el.innerHTML='<div class="scenariohead"><div><div class="tag">'+s.tag+'</div><h4>'+s.title+'</h4><div style="color:var(--muted)">'+s.text+'</div></div></div><div class="choices"></div><div class="impact"></div>';const choices=el.querySelector('.choices'),impact=el.querySelector('.impact');s.choices.forEach((c,ci)=>{const b=document.createElement('button');b.className='choice';b.innerHTML='<strong>'+c.label+'</strong><div style="font-size:12px;color:var(--muted);margin-top:5px">'+c.sub+'</div>';b.addEventListener('click',()=>{choices.querySelectorAll('.choice').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');impact.innerHTML='<strong>'+c.note+'</strong><div class="impactgrid"><div><span>Price</span><strong>'+c.impact.price+'</strong></div><div><span>Volume</span><strong>'+c.impact.volume+'</strong></div><div><span>Margin</span><strong>'+c.impact.margin+'</strong></div><div><span>What you bought</span><strong>'+c.impact.value+'</strong></div></div>';impact.classList.add('show');progress('scenario'+si)});choices.appendChild(b)});root.appendChild(el)});
+
+  $('replay').addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});toast('Margin Lab ready for another run')});
+})();
+</script>
+  <script>
+(function () {
+  let lastHeight = 0;
+  let resizeTimer = null;
+
+  function getPageHeight() {
+    const shell = document.querySelector('.shell');
+    return Math.ceil(Math.max(
+      shell ? shell.scrollHeight : 0,
+      document.body.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.scrollHeight,
+      document.documentElement.offsetHeight
+    ));
+  }
+
+  function sendHeight(force = false) {
+    window.requestAnimationFrame(function () {
+      const height = getPageHeight();
+      if (!force && Math.abs(height - lastHeight) < 3) return;
+      lastHeight = height;
+      window.parent.postMessage({
+        type: 'alcivia-simulator-height',
+        height: height
+      }, '*');
+    });
+  }
+
+  function scheduleHeight() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      sendHeight();
+    }, 80);
+  }
+
+  window.addEventListener('load', function () {
+    sendHeight(true);
+    setTimeout(function(){ sendHeight(true); }, 250);
+    setTimeout(function(){ sendHeight(true); }, 750);
+    setTimeout(function(){ sendHeight(true); }, 1500);
+  });
+
+  if ('ResizeObserver' in window) {
+    const observer = new ResizeObserver(function () {
+      scheduleHeight();
+    });
+    observer.observe(document.body);
+    const shell = document.querySelector('.shell');
+    if (shell) observer.observe(shell);
+  }
+
+  if ('MutationObserver' in window) {
+    const mutationObserver = new MutationObserver(function () {
+      scheduleHeight();
+    });
+    mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      characterData: false
+    });
+  }
+
+  document.addEventListener('input', scheduleHeight);
+  document.addEventListener('change', scheduleHeight);
+  document.addEventListener('click', function () {
+    scheduleHeight();
+    setTimeout(function(){ sendHeight(); }, 300);
+  });
+  window.addEventListener('resize', scheduleHeight);
+
+  window.addEventListener('message', function (event) {
+    if (event.data && event.data.type === 'alcivia-request-height') {
+      sendHeight(true);
+    }
+  });
+})();
+</script>
+</body>
+</html>
